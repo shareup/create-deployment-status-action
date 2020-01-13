@@ -1,0 +1,28 @@
+{
+  "name": "create-deployment-status-action",
+  "version": "0.0.1",
+  "description": "GitHub action to create a new GitHub deployment status for an existing deployment",
+  "main": "index.ts",
+  "repository": "https://github.com/shareup/create-deployment-status-action",
+  "author": "Nathan Herald <nathan@shareup.app>",
+  "license": "MIT",
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  },
+  "scripts": {
+    "lint": "standard",
+    "package": "ncc build index.ts -o dist -s"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.21.0",
+    "standard": "^14.3.1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1",
+    "@octokit/core": "^2.1.2",
+    "@octokit/types": "^2.0.2"
+  }
+}

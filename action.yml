@@ -1,0 +1,41 @@
+name: create-deployment-status
+description: GitHub action to create a new GitHub deployment status for an existing deployment
+
+inputs:
+  deployment_id:
+    required: true
+    description: The ID of the deployment to create a status for
+  state:
+    required: true
+    description: The state for this deployment status - can be one of error, failure, inactive, in_progress, queued, pending, or success.
+  repo:
+    required: false
+    description: Name of the repo, will default to the current repo's name
+  owner:
+    required: false
+    description: Name of the repo's owner (user or org), will default to the current repo's owner
+  description:
+    required: false
+    description: Short description of the status
+  log_url:
+    required: false
+    description: URL to the logs related to the deployment
+  environment_url:
+    required: false
+    description: URL to see the result of the deployment for the current environment
+  github_token:
+    required: true
+    description: API token for GitHub
+    default: ${{ github.token }}
+  debug:
+    required: false
+    description: If true, then output debugging information
+    default: false
+
+outputs:
+  response:
+    description: HTTP response payload
+
+runs:
+  using: node12
+  main: dist/index.js
