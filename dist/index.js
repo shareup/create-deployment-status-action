@@ -7897,7 +7897,7 @@ function filterMissing(original) {
     return result;
 }
 function isTrue(value) {
-    return true;
+    return value === true || value === 'true';
 }
 
 
