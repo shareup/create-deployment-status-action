@@ -7833,7 +7833,7 @@ var client = new core_2.Octokit({ auth: token, log: log });
                     }))];
             case 1:
                 response = _a.sent();
-                output('response', response);
+                output('response', JSON.stringify(response));
                 return [3 /*break*/, 3];
             case 2:
                 e_1 = _a.sent();

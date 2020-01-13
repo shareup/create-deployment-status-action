@@ -33,7 +33,7 @@ const client = new Octokit({ auth: token, log })
       environment_url: environmentURL
     }))
 
-    output('response', response)
+    output('response', JSON.stringify(response))
   } catch (e) {
     setFailed(`error: ${e.stack}`)
   }
