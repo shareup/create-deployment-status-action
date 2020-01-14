@@ -16,7 +16,6 @@ const description = input('description')
 const logURL = input('log_url')
 const environmentURL = input('environment_url')
 
-
 let log = null
 
 if (debug) {
@@ -90,7 +89,7 @@ function output (name: string, value: string) {
 }
 
 function filterMissing (original: object) {
-  let result = {}
+  const result = {}
 
   Object.keys(original).forEach(key => {
     if (original[key] && original[key] !== '') {
